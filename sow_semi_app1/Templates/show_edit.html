@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages%}
+
+            <li {% if message.tags%} class="{{message.tags}}" {% endif %}> {{message}} </li>
+
+        {% endfor %}
+
+
+    </ul>
+
+    {% endif%}
+
+
+
+
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        <h1>Edit an Author</h1>
+        <p>Title: <input name="title_form_new" type="text"></p>
+        <p>Network: <input name="network_form_new" type="text"></p>
+        <p>Release Date: <input name="release_form_new" type="datetime"></p>
+        <p>Description: <input name="desc_form_new" type="text"></p>
+        <button type="submit">Update</button>
+    </form>
+    
+
+
+</body>
+
+
+
+</html>
+
+
+
+
+
+
+
+
